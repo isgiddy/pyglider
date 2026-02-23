@@ -779,7 +779,7 @@ def raw_to_timeseries(
     _log.debug(f'HERE, {ds.pressure[0:100]}')
     # some derived variables:
     # trim bad times...
-
+    ds = utils.convert_ddmm_coords(ds,lat_name=ds.latitude,lon_name=ds.longitude)
     ds = utils.get_glider_depth(ds)
     ds = utils.get_distance_over_ground(ds)
 
